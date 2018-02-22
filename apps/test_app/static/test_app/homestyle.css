@@ -1,0 +1,33 @@
+
+#wrapper {
+  width: 970px;
+  height: 900px;
+  display: inline-block;
+}
+
+
+#main {
+  background-color: gray;
+  width: 70%;
+  height: 400px;
+
+}
+
+a {
+  color: white;
+  background-color: lightblue;
+}
+
+.boxes {
+  width: 30%;
+  height: 250px;
+  display: block;
+}
+
+.boxes h3 {
+  font-weight: bold;
+}
+
+.boxes p {
+  text-align: center;
+}
