@@ -12,6 +12,15 @@ import bcrypt
 def index(request):
     return render(request, 'test_app/index.html')
 
+def edit(request):
+    return HttpResponse("hello")
+
+def create(request):
+    return HttpResponse("hi")
+
+def new(request):
+    return HttpResponse("hi")
+
 def signinpage(request):
     return render(request, 'test_app/signin.html')
 
@@ -40,20 +49,18 @@ def signin(request, methods="POST"):
         messages.error(request, "This email has not been registered!")
         return redirect('/test_app')
 
+def delete(request):
+    return HttpResponse("hi")
 
 def show(request):
-    #show friggen prfile page of userinformation
-    #AHHHH
-    render
-def
+    return HttpResponse("hi")
+
+def showedit(request):
+    return HttpResponse("hi")
+
 #shows the manage- admin dashboard
 def dashboard(request):
     return render(request, 'test_app/manage.html')
-
-def show(request):
-
-
-
 
 
 
