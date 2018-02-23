@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'apps.course',
     'apps.login_reg',
     'apps.test_app',
+    'apps.belt',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

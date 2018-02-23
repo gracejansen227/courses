@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+          {% load static %}
+        <link rel="stylesheet" href="{% static 'belt/tablestyle.css' %}" media="screen" charset="utf-8">
+
+        <title> What's Up </title>
+    </head>
+    <body>
+        <div id="wrapper">
+          <h3><strong> Hello, {{request.session.first_name}} !</strong> </h3> <a href="/"> Logout</a>
+          <h4> Here are your appointments for today, {{request.session.today}} </h4>
+
+          <table id="appointments">
+        <tr>
+          <th>Tasks</th>
+          <th> Time</th>
+          <th> Status </th>
+          <th> Actions </th>
+        </tr>
+        {% for appointment in today_appointments %}
+        <tr>
+          <td>{{appointment.task}}</td>
+          <td>{{appointment.time}}</td>
+          <td> {{appointment.status}}</td>
+
+          <td>
+             <a href="/{{appointment.id}}/showedit">Edit </a>
+
+              <a href="/{{appointment.id}}/delete">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+      <h4> Your Other Appointments </h4>
+      <table id="other_appointments">
+        <tr>
+          <th>Tasks</th>
+          <th> Time</th>
+          <th> Status </th>
+        </tr>
+          {% for appointment in success_appointments %}
+        <tr>
+          <td>{{appointment.task}}</td>
+          <td> {{appointment.date}}</td>
+          <td>{{appointment.time}}</td>
+          <td> {{appointment.status}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+<h4> Add Appointment </h4>
+
+      {% if messages %}
+          {% for message in messages %}
+          <p> {{message}}</p>
+          {% endfor %}
+      {% endif %}
+      <form action="/add" method="post">
+          {% csrf_token %}
+        Task: <input name="task" type="text">
+        Status: <select name="status">
+          <option value="Done">Done</option>
+          <option value="Pending">Pending</option>
+          <option value="Missed">Missed</option>
+          </select>
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date">
+
+        Time : <input type="time" name="time">
+
+        <input type="submit" value="Add">
+        </form>
+
+        </div>
+    </body>
+</html>

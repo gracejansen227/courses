@@ -8,8 +8,7 @@ from models import *
 
 def index(request):
     print "is this going to index"
-    return HttpResponse("ghello")
-    #return render(request, 'course/index.html', {'courses': Course.objects.all()})
+    return render(request, 'course/index.html', {'courses': Course.objects.all()})
 
 def create(request, methods="POST"):
     errors = Course.objects.basic_validator(request.POST)
