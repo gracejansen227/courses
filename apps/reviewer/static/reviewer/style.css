@@ -1,0 +1,27 @@
+
+form {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+#wrapper {
+  padding: 20px;
+  width: 800px;
+  height: 600px;
+
+}
+
+#rest {
+  border: 2px solid lightblue;
+  margin-left: 60px;
+  display: inline-block;
+  padding: 10px;
+}
+
+#first_three {
+  border: 2px dashed pink;
+  display: inline-block;
+  margin-left: 60px;
+  padding: 10px;
+}

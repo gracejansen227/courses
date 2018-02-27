@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'reviewer/style.css' %}" media="screen" title="no title"  charset="utf-8">
+ {% load static %}
+        <title> Books Home </title>
+    </head>
+    <body>
+        <div id="wrapper">
+          <heading>
+          <h3><u> Welcome {{ request.session.first_name}} !</u> </h3>
+
+
+            <form id="logoff" action='/logout' method='post'>
+            <input type='submit' value='log off'>
+            </form>
+          </heading>
+
+          <a href="/showadd"> Add Book and Review</a>
+
+          <div id="first_three">
+            <h3> Recent Book Reviews </h3>
+
+          {% if first_reviews %}
+            {% for review in first_reviews %}
+
+              <h3> {{title}} </h3>
+                <p> Rating: {{review.rating}} </p>
+               <p> {{reviewer}} says: {{ review.review}} </p>
+               <h5> Posted on {{review.created_at}} </h5>
+
+            {% endfor %}
+          {% endif %}
+        </div>
+
+        <div id="rest">
+          <h3> Other Books with Reviews </h3>
+          {% if rest_reviews %}
+            {% for review in rest_reviews %}
+
+            <h3> {{ review.title}} </h3>
+
+          {% endfor %}
+        {% endif %}
+      </div>
+        </div>
+    </body>
+</html>

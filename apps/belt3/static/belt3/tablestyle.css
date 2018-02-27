@@ -1,0 +1,27 @@
+
+form {
+  width: 400px;
+  height: 300px;
+  display: inline-block;
+}
+
+input {
+  margin-right: 200px;
+  display: inline-block;
+  width: 250px;
+  height: 30px;
+}
+
+
+#wrapper {
+  padding: 20px;
+  width: 700px;
+  height: 600px;
+}
+
+table {
+  width: 500px;
+  height: 300px;
+  border: 2px dashed pink;
+  text-align: center;
+}

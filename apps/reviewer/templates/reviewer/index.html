@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'reviewer/style.css' %}" media="screen" title="no title"  charset="utf-8">
+ {% load static %}
+        <title> Welcome </title>
+    </head>
+    <body>
+        <div id="wrapper">
+          {% if messages %}
+              {% for message in messages %}
+            <p> {{message}}</p>
+              {% endfor %}
+            {% endif %}
+
+          <h1>Registration Form</h1>
+            <h3>Fill out the Following</h3>
+
+            <form action="/register" method='post'>
+              {% csrf_token %}
+                First Name: <input type='text' name='first_name'>
+                Last Name: <input type='text' name='last_name'>
+                Alias: <input type="text" name="alias">
+                E-mail: <input type='text' name='email'>
+
+                Password: <input type='password' name='password'>
+                Confirm Password: <input type='password' name='confirmpw'>
+
+              <input type='submit' value='Register!'>
+            </form>
+
+
+            <aside id="login">
+              <h3> Already registered? Login Here! </h3>
+              <form action="/login" method='post'>
+                  {% csrf_token %}
+                  E-mail: <input type='text' name='email'>
+                  Password: <input type='text' name='loginpw'>
+                <input type='submit' value='Log In'>
+              </form>
+
+            </aside>
+
+        </div>
+    </body>
+</html>

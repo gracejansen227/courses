@@ -4,5 +4,5 @@ from __future__ import unicode_literals
 from django.apps import AppConfig
 
 
-class TestAppConfig(AppConfig):
-    name = 'test_app'
+class Belt3Config(AppConfig):
+    name = 'belt3'
